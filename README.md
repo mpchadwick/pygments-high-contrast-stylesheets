@@ -10,7 +10,7 @@ These high contrast themes are WCAG AA's standards, making them more friendly to
 
 ## Examples
 
-#### vim.css
+### vim.css
 
 **Before**
 
