@@ -1,22 +1,28 @@
-# pygments-css
+# pygments-high-contrast-stylesheets
 
+A hard fork of [pygments-css](https://github.com/richleland/pygments-css) with WCAG AA passing stylesheets.
 
-[Pygments](http://pygments.org), a Python-based code highlighting tool, comes with a set of builtin styles (not css files) for code highlighting. You have to generate a CSS file using the command line.
+### Current Status
 
-You can generate these yourself, but this git repository has already generated them for you.
+The table below shows the status conversion status off all, pygments-css stylesheets. The "Converted" column is marked with a check (✅) for any stylesheets that have been converted.
 
-
-build
------
-
-These css files were generated using pygmentize on the command line like so::
-
-    pygmentize -S default -f html -a .highlight > default.css
-
-You can remove or change the top-level class by removing or modifying `-a .highlight` in the `makefile`.
-
-To regenerate them all with whichever ``pygments`` version you are using, run
-
-    git clone <this repo>
-    cd pygments-css
-    make cssfiles
+|Stylesheet|Converted|
+|---|---|
+|autumn.css||
+|borland.css||
+|bw.css||
+|colorful.css||
+|default.css||
+|emacs.css||
+|friendly.css||
+|fruity.css||
+|manni.css||
+|monokai.css||
+|murphy.css||
+|native.css||
+|pastie.css||
+|perldoc.css||
+|tango.css||
+|trac.css||
+|vim.css||
+|vs.css||
