@@ -14,11 +14,11 @@ These high contrast themes are WCAG AA's standards, making them more friendly to
 
 **Before**
 
-![](screenshots/vim-before-resized.png)
+![](https://i.imgur.com/CCsPfAc.png | width=417)
 
 **After**
 
-![](screenshots/vim-after-resized.png)
+![](https://i.imgur.com/UfuIPtX.png | width=417)
 
 ## Current Status
 
