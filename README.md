@@ -6,7 +6,7 @@ A hard fork of [pygments-css](https://github.com/richleland/pygments-css) with W
 
 When you're choosing a theme for your personal IDE feel free to choose whatever you'd like. But when you're publishing to the web, keep in mind that you're not the only one reading the code using the selected theme.
 
-These high contrast themes are WCAG AA's standards, making them more friendly to large segment of the population with color vision deficiency.
+These high contrast themes pass WCAG AA's standards, making them more friendly to the large segment of the population with color vision deficiency.
 
 ## Examples
 
