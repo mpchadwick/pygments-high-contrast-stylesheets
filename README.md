@@ -2,6 +2,18 @@
 
 A hard fork of [pygments-css](https://github.com/richleland/pygments-css) with WCAG AA passing stylesheets.
 
+### Examples
+
+#### vim.css
+
+**Before**
+
+![](screenshots/vim-before.png)
+
+**After**
+
+![](screenshots/vim-after.png)
+
 ### Current Status
 
 The table below shows the status conversion status off all, pygments-css stylesheets. The "Converted" column is marked with a check (✅) for any stylesheets that have been converted.
