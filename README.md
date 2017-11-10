@@ -14,11 +14,11 @@ These high contrast themes are WCAG AA's standards, making them more friendly to
 
 **Before**
 
-![](https://i.imgur.com/CCsPfAc.png | width=417)
+<img src="https://i.imgur.com/CCsPfAc.png" width=417>
 
 **After**
 
-![](https://i.imgur.com/UfuIPtX.png | width=417)
+<img src="https://i.imgur.com/UfuIPtX.png" width=417>
 
 ## Current Status
 
