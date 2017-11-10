@@ -1,0 +1,12 @@
+#!/usr/bin/env ruby
+
+require 'css_parser'
+require 'wcag_color_contrast'
+include CssParser
+
+parser = CssParser::Parser.new
+parser.load_file!(ARGV[0]);
+
+rs = RuleSet.new(nil, parser.find_by_selector('.highlight')[0])
+
+puts rs.get_value('background')
