@@ -24,5 +24,5 @@ The table below shows the status conversion status off all, pygments-css stylesh
 |perldoc.css||
 |tango.css||
 |trac.css||
-|vim.css||
+|vim.css|✅|
 |vs.css||
