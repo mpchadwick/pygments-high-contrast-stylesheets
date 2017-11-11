@@ -7,6 +7,26 @@ include CssParser
 parser = CssParser::Parser.new
 parser.load_file!(ARGV[0]);
 
-rs = RuleSet.new(nil, parser.find_by_selector('.highlight')[0])
+bg_selector = '.highlight'
+bg_rules = RuleSet.new(nil, parser.find_by_selector(bg_selector)[0])
+bg_color = bg_rules.get_value('background').chomp(';')[1..-1]
 
-puts rs.get_value('background')
+parser.each_selector do |selector, declarations, specificity|
+  if selector == bg_selector
+    next
+  end
+  type_rules = RuleSet.new(nil, declarations)
+  color = type_rules.get_value('color').chomp(';')[1..-1]
+  if !color
+    next
+  end
+
+  calculator = WCAGColorContrast::Ratio.new
+
+  ratio = calculator.ratio(color, bg_color)
+
+  if ratio < 4.5
+    puts 'Insufficient contrast | Selector: ' + selector + ' | Ratio: ' + ratio.to_s + ' | Color: ' + color
+  end
+
+end
