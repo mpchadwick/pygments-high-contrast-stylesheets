@@ -26,7 +26,7 @@ The table below shows the status conversion status off all, pygments-css stylesh
 
 |Stylesheet|Converted|
 |---|---|
-|autumn.css||
+|autumn.css|✅|
 |borland.css||
 |bw.css||
 |colorful.css||
