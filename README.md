@@ -39,7 +39,7 @@ The table below shows the status conversion status off all, pygments-css stylesh
 |murphy.css||
 |native.css||
 |pastie.css||
-|perldoc.css||
+|perldoc.css|✅|
 |tango.css||
 |trac.css||
 |vim.css|✅|
