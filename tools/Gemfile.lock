@@ -1,0 +1,13 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    chroma (0.2.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  chroma
+
+BUNDLED WITH
+   1.14.6
