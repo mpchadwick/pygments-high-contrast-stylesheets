@@ -1,0 +1,32 @@
+#!/usr/bin/env ruby
+
+demos = [
+  "autumn",
+  "monokai",
+  "perldoc",
+  "vim"
+]
+
+demo_single_template = File.read('templates/demo-single.html')
+demo_list_template = File.read('templates/demo-list.html')
+
+demo_list = File.new("../index.html", "w")
+demo_list.puts demo_list_template
+
+demos.each do |demo|
+  out = File.new("../demos/#{demo}-converted.html", "w")
+  out.puts "<link rel=\"stylesheet\" href=\"../#{demo}.css\">"
+  out.puts demo_single_template
+  out.close
+
+  out = File.new("../demos/#{demo}-original.html", "w")
+  out.puts "<link rel=\"stylesheet\" href=\"../original-stylesheets/#{demo}.css\">"
+  out.puts demo_single_template
+  out.close
+
+  demo_list.puts "<h2>#{demo}.css</h2>"
+  demo_list.puts "<h3>Before</h3>"
+  demo_list.puts "<iframe src=\"demos/#{demo}-original.html\"></iframe>"
+  demo_list.puts "<h3>After</h3>"
+  demo_list.puts "<iframe src=\"demos/#{demo}-converted.html\"></iframe>"
+end
