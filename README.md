@@ -35,7 +35,7 @@ The table below shows the status conversion status off all, pygments-css stylesh
 |friendly.css||
 |fruity.css||
 |manni.css||
-|monokai.css||
+|monokai.css|✅|
 |murphy.css||
 |native.css||
 |pastie.css||
