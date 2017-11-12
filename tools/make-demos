@@ -8,10 +8,11 @@ demos = [
 ]
 
 demo_single_template = File.read('templates/demo-single.html')
-demo_list_template = File.read('templates/demo-list.html')
+demo_list_html = File.read('templates/demo-list.html')
 
 demo_list = File.new("../index.html", "w")
-demo_list.puts demo_list_template
+demo_list_find = '<!-- DEMO_LIST -->'
+demo_list_replace = ''
 
 demos.each do |demo|
   out = File.new("../demos/#{demo}-converted.html", "w")
@@ -24,9 +25,13 @@ demos.each do |demo|
   out.puts demo_single_template
   out.close
 
-  demo_list.puts "<h2>#{demo}.css</h2>"
-  demo_list.puts "<h3>Before</h3>"
-  demo_list.puts "<iframe src=\"demos/#{demo}-original.html\"></iframe>"
-  demo_list.puts "<h3>After</h3>"
-  demo_list.puts "<iframe src=\"demos/#{demo}-converted.html\"></iframe>"
+  demo_list_replace += "<h2>#{demo}.css</h2>"
+  demo_list_replace += "<h3>Before</h3>"
+  demo_list_replace += "<iframe src=\"demos/#{demo}-original.html\"></iframe>"
+  demo_list_replace += "<h3>After</h3>"
+  demo_list_replace += "<iframe src=\"demos/#{demo}-converted.html\"></iframe>"
 end
+
+demo_list_html.sub! demo_list_find, demo_list_replace
+demo_list.puts demo_list_html
+demo_list.close
