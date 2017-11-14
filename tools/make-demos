@@ -5,6 +5,7 @@ demos = [
   "monokai",
   "native",
   "perldoc",
+  "trac",
   "vim"
 ]
 
@@ -27,9 +28,6 @@ demos.each do |demo|
   out.close
 
   demo_list_replace += "<h2>#{demo}.css</h2>"
-  demo_list_replace += "<h3>Before</h3>"
-  demo_list_replace += "<iframe src=\"demos/#{demo}-original.html\"></iframe>"
-  demo_list_replace += "<h3>After</h3>"
   demo_list_replace += "<iframe src=\"demos/#{demo}-converted.html\"></iframe>"
 end
 
