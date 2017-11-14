@@ -3,6 +3,7 @@
 demos = [
   "autumn",
   "monokai",
+  "native",
   "perldoc",
   "vim"
 ]
