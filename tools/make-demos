@@ -27,7 +27,7 @@ demos.each do |demo|
   out.puts demo_single_template
   out.close
 
-  demo_list_replace += "<h2>#{demo}.css</h2>"
+  demo_list_replace += "<h3>#{demo}.css</h3>"
   demo_list_replace += "<iframe src=\"demos/#{demo}-converted.html\"></iframe>"
 end
 
