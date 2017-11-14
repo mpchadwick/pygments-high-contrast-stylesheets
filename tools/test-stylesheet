@@ -10,7 +10,9 @@ parser.load_file!(ARGV[0]);
 
 bg_selector = '.highlight'
 bg_rules = RuleSet.new(nil, parser.find_by_selector(bg_selector)[0])
+calculator = WCAGColorContrast::Ratio.new
 bg_color = bg_rules.get_value('background').chomp(';')[1..-1]
+bg_color_relative_luminance = calculator.relative_luminance(bg_color)
 
 parser.each_selector do |selector, declarations, specificity|
   if selector == bg_selector
@@ -22,18 +24,22 @@ parser.each_selector do |selector, declarations, specificity|
     next
   end
 
-  calculator = WCAGColorContrast::Ratio.new
-
+  color_relative_luminance = calculator.relative_luminance(color)
   ratio = calculator.ratio(color, bg_color)
 
   if ratio < 4.5
+    original = ratio
     recommendation = color
     while ratio < 4.5
-      recommendation = recommendation.paint.lighten(1).to_s[1..-1]
+      if bg_color_relative_luminance < color_relative_luminance
+        recommendation = recommendation.paint.lighten(1).to_s[1..-1]
+      else
+        recommendation = recommendation.paint.darken(1).to_s[1..-1]
+      end
       ratio = calculator.ratio(recommendation, bg_color)
     end
     puts 'Insufficient contrast | Selector: ' + selector +
-      ' | Ratio: ' + ratio.to_s +
+      ' | Ratio: ' + original.to_s +
       ' | Color: ' + color +
       ' | Background: ' + bg_color +
       ' | Recommendation: ' + recommendation
