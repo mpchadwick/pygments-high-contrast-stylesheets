@@ -2,6 +2,7 @@
 
 demos = [
   "autumn",
+  "colorful",
   "monokai",
   "native",
   "perldoc",
