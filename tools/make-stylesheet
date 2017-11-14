@@ -1,5 +1,11 @@
 #!/usr/bin/env ruby
 
+# Usage:
+#
+# ./make-stylesheet ../original-stylesheets/borland.css ../borland.css
+#
+# Run from within the tools/ directory
+
 require 'css_parser'
 require 'wcag_color_contrast'
 require 'chroma'
@@ -8,6 +14,8 @@ include CssParser
 parser = CssParser::Parser.new
 parser.load_file!(ARGV[0]);
 
+converted = File.new("#{ARGV[1]}", "w")
+
 bg_selector = '.highlight'
 bg_rules = RuleSet.new(nil, parser.find_by_selector(bg_selector)[0])
 calculator = WCAGColorContrast::Ratio.new
@@ -15,12 +23,14 @@ bg_color = bg_rules.get_value('background').chomp(';')[1..-1]
 bg_color_relative_luminance = calculator.relative_luminance(bg_color)
 
 parser.each_selector do |selector, declarations, specificity|
+  rule_set = RuleSet.new(selector, declarations)
   if selector == bg_selector
+    converted.puts rule_set.to_s
     next
   end
-  type_rules = RuleSet.new(nil, declarations)
-  color = type_rules.get_value('color').chomp(';')[1..-1]
+  color = rule_set.get_value('color').chomp(';')[1..-1]
   if !color
+    converted.puts rule_set.to_s
     next
   end
 
@@ -38,11 +48,16 @@ parser.each_selector do |selector, declarations, specificity|
       end
       ratio = calculator.ratio(recommendation, bg_color)
     end
-    puts 'Insufficient contrast | Selector: ' + selector +
-      ' | Ratio: ' + original.to_s +
-      ' | Color: ' + color +
+    rule_set.remove_declaration!('color')
+    rule_set.add_declaration!('color', '#' + recommendation)
+    puts 'Fixed: ' + selector +
+      ' | Original Ratio: ' + original.to_s +
+      ' | Original Color: ' + color +
       ' | Background: ' + bg_color +
-      ' | Recommendation: ' + recommendation
+      ' | New Color: ' + recommendation
   end
 
+  converted.puts rule_set.to_s
 end
+
+converted.close
