@@ -1,0 +1,31 @@
+<link rel="stylesheet" href="../solarized-light.css">
+<style>
+html, body {
+  margin: 0;
+}
+</style>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight" style="padding: 15px;"><code><span class="nb">require</span> <span class="s1">'twitter_ebooks'</span>
+
+<span class="k">class</span> <span class="nc">MyBot</span> <span class="o">&lt;</span> <span class="no">Ebooks</span><span class="o">::</span><span class="no">Bot</span>
+  <span class="c1"># Configuration here applies to all MyBots</span>
+  <span class="k">def</span> <span class="nf">configure</span>
+
+    <span class="nb">self</span><span class="p">.</span><span class="nf">consumer_key</span> <span class="o">=</span> <span class="no">ENV</span><span class="p">[</span><span class="s1">'TWITTER_CONSUMER_KEY'</span><span class="p">]</span>
+    <span class="nb">self</span><span class="p">.</span><span class="nf">consumer_secret</span> <span class="o">=</span> <span class="no">ENV</span><span class="p">[</span><span class="s1">'TWITTER_CONSUMER_SECRET'</span><span class="p">]</span>
+
+  <span class="k">end</span>
+
+  <span class="k">def</span> <span class="nf">on_startup</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="no">Ebooks</span><span class="o">::</span><span class="no">Model</span><span class="p">.</span><span class="nf">load</span><span class="p">(</span><span class="s2">"model/text.model"</span><span class="p">)</span>
+    <span class="n">scheduler</span><span class="p">.</span><span class="nf">cron</span> <span class="s1">'0 6,18,22 * * * America/New_York'</span> <span class="k">do</span>
+      <span class="n">tweet</span><span class="p">(</span><span class="n">model</span><span class="p">.</span><span class="nf">make_statement</span><span class="p">(</span><span class="mi">140</span><span class="p">))</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="c1"># Make a MyBot and attach it to an account</span>
+<span class="no">MyBot</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="s2">"mage__ebooks"</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">bot</span><span class="o">|</span>
+  <span class="n">bot</span><span class="p">.</span><span class="nf">access_token</span> <span class="o">=</span> <span class="no">ENV</span><span class="p">[</span><span class="s1">'TWITTER_ACCESS_TOKEN'</span><span class="p">]</span>
+  <span class="n">bot</span><span class="p">.</span><span class="nf">access_token_secret</span> <span class="o">=</span> <span class="no">ENV</span><span class="p">[</span><span class="s1">'TWITTER_ACCESS_TOKEN_SECRET'</span><span class="p">]</span>
+<span class="k">end</span>
+</code></pre></div></div>

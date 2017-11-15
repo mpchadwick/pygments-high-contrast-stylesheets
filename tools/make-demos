@@ -8,6 +8,7 @@ demos = [
   "native",
   "perldoc",
   "solarized-dark",
+  "solarized-light",
   "trac",
   "vim"
 ]
