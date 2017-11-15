@@ -7,6 +7,7 @@ demos = [
   "monokai",
   "native",
   "perldoc",
+  "solarized-dark",
   "trac",
   "vim"
 ]
