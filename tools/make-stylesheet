@@ -20,6 +20,11 @@ bg_selector = '.highlight'
 bg_rules = RuleSet.new(nil, parser.find_by_selector(bg_selector)[0])
 calculator = WCAGColorContrast::Ratio.new
 bg_color = bg_rules.get_value('background').chomp(';')[1..-1]
+
+if !bg_color
+  bg_color = bg_rules.get_value('background-color').chomp(';')[1..-1]
+end
+
 bg_color_relative_luminance = calculator.relative_luminance(bg_color)
 
 parser.each_selector do |selector, declarations, specificity|
