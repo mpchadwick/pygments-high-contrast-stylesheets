@@ -1,25 +1,150 @@
+<!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <title>pygments-high-contrast-stylesheets</title>
     <meta name="description" content="A hard fork of pygments-css with WCAG AA passing stylesheets">
     <style>
-    iframe {
-      width: 600;
-      height: 450;
-      border: 0;
-      display: block;
-    }
+      iframe {
+        width: 600px;
+        height: 450px;
+        border: 0px;
+        display: inline;
+      }
+      td {
+        text-align: center;
+      }
+      table { border-collapse: collapse; }
+      .bordered {
+        padding-bottom: 2em;
+        border-top: 1px solid black;
+      }
     </style>
-</head>
-<body>
-<h1>pygments-high-contrast-stylesheets</h1>
-<p>A hard fork of <a href="https://github.com/richleland/pygments-css">pygments-css</a> with WCAG AA passing stylesheets.</p>
-<p><a href="https://github.com/mpchadwick/pygments-high-contrast-stylesheets">View Project on GitHub</a></p>
-<h2>Why?</h2>
-<p>When you're choosing a theme for your personal IDE feel free to choose whatever you'd like. But when you're publishing to the web, keep in mind that you're not the only one reading the code using the selected theme.</p>
-<p>These high contrast themes pass WCAG AA's standards, making them more friendly to the large segment of the population with color vision deficiency.</p>
-<h2>Demos</h2>
-<h3>autumn.css</h3><iframe src="demos/autumn-converted.html" title="autumn.css demo"></iframe><h3>colorful.css</h3><iframe src="demos/colorful-converted.html" title="colorful.css demo"></iframe><h3>fruity.css</h3><iframe src="demos/fruity-converted.html" title="fruity.css demo"></iframe><h3>monokai.css</h3><iframe src="demos/monokai-converted.html" title="monokai.css demo"></iframe><h3>native.css</h3><iframe src="demos/native-converted.html" title="native.css demo"></iframe><h3>perldoc.css</h3><iframe src="demos/perldoc-converted.html" title="perldoc.css demo"></iframe><h3>solarized-dark.css</h3><iframe src="demos/solarized-dark-converted.html" title="solarized-dark.css demo"></iframe><h3>solarized-light.css</h3><iframe src="demos/solarized-light-converted.html" title="solarized-light.css demo"></iframe><h3>trac.css</h3><iframe src="demos/trac-converted.html" title="trac.css demo"></iframe><h3>vim.css</h3><iframe src="demos/vim-converted.html" title="vim.css demo"></iframe>
-<p><a href="https://github.com/mpchadwick/pygments-high-contrast-stylesheets">View Project on GitHub</a></p>
-</body>
+  </head>
+  <body>
+    <h1>pygments-high-contrast-stylesheets</h1>
+
+    <p>A hard fork of <a href="https://github.com/richleland/pygments-css">pygments-css</a> with WCAG AA passing stylesheets.</p>
+
+    <p><a href="https://github.com/mpchadwick/pygments-high-contrast-stylesheets">View Project on GitHub</a></p>
+
+    <h2>Why?</h2>
+
+    <p>When you're choosing a theme for your personal IDE feel free to choose whatever you'd like. But when you're publishing to the web, keep in mind that you're not the only one reading the code using the selected theme.</p>
+
+    <p>These high contrast themes pass WCAG AA's standards, making them more friendly to the large segment of the population with color vision deficiency.</p>
+
+    <h2>Demos</h2>
+
+    <table style="width:100%">
+      <tr>
+        <td><a href="autumn.css">converted autumn.css</a></td>
+        <td><a href="original-stylesheets/autumn.css">original autumn.css</a></td>
+      </tr>
+      <tr>
+        <td><iframe src="demos/autumn-converted.html" title="autumn.css demo"></iframe></td>
+        <td><iframe src="demos/autumn-original.html" title="autumn.css original demo"></iframe></td>
+      </tr>
+      <!-- simulate horizontal rule -->
+      <tr><td class="bordered"></td><td class="bordered"></td></tr>
+      <!-- end horizontal rule -->
+      <tr>
+        <td><a href="colorful.css">converted colorful.css</a></td>
+        <td><a href="original-stylesheets/colorful.css">original colorful.css</a></td>
+      </tr>
+      <tr>
+        <td><iframe src="demos/colorful-converted.html" title="colorful.css demo"></iframe></td>
+        <td><iframe src="demos/colorful-original.html" title="colorful.css original demo"></iframe></td>
+      </tr>
+      <!-- simulate horizontal rule -->
+      <tr><td class="bordered"></td><td class="bordered"></td></tr>
+      <!-- end horizontal rule -->
+      <tr>
+        <td><a href="fruity.css">converted fruity.css</a></td>
+        <td><a href="original-stylesheets/fruity.css">original fruity.css</a></td>
+      </tr>
+      <tr>
+        <td><iframe src="demos/fruity-converted.html" title="fruity.css demo"></iframe></td>
+        <td><iframe src="demos/fruity-original.html" title="fruity.css original demo"></iframe></td>
+      </tr>
+      <!-- simulate horizontal rule -->
+      <tr><td class="bordered"></td><td class="bordered"></td></tr>
+      <!-- end horizontal rule -->
+      <tr>
+        <td><a href="monokai.css">converted monokai.css</a></td>
+        <td><a href="original-stylesheets/monokai.css">original monokai.css</a></td>
+      </tr>
+      <tr>
+        <td><iframe src="demos/monokai-converted.html" title="monokai.css demo"></iframe></td>
+        <td><iframe src="demos/monokai-original.html" title="monokai.css original demo"></iframe></td>
+      </tr>
+      <!-- simulate horizontal rule -->
+      <tr><td class="bordered"></td><td class="bordered"></td></tr>
+      <!-- end horizontal rule -->
+      <tr>
+        <td><a href="native.css">converted native.css</a></td>
+        <td><a href="original-stylesheets/native.css">original native.css</a></td>
+      </tr>
+      <tr>
+        <td><iframe src="demos/native-converted.html" title="native.css demo"></iframe></td>
+        <td><iframe src="demos/native-original.html" title="native.css original demo"></iframe></td>
+      </tr>
+      <!-- simulate horizontal rule -->
+      <tr><td class="bordered"></td><td class="bordered"></td></tr>
+      <!-- end horizontal rule -->
+      <tr>
+        <td><a href="perldoc.css">converted perldoc.css</a></td>
+        <td><a href="original-stylesheets/perldoc.css">original perldoc.css</a></td>
+      </tr>
+      <tr>
+        <td><iframe src="demos/perldoc-converted.html" title="perldoc.css demo"></iframe></td>
+        <td><iframe src="demos/perldoc-original.html" title="perldoc.css original demo"></iframe></td>
+      </tr>
+      <!-- simulate horizontal rule -->
+      <tr><td class="bordered"></td><td class="bordered"></td></tr>
+      <!-- end horizontal rule -->
+      <tr>
+        <td><a href="solarized-dark.css">converted solarized-dark.css</a></td>
+        <td><a href="original-stylesheets/solarized-dark.css">original solarized-dark.css</a></td>
+      </tr>
+      <tr>
+        <td><iframe src="demos/solarized-dark-converted.html" title="solarized-dark.css demo"></iframe></td>
+        <td><iframe src="demos/solarized-dark-original.html" title="solarized-dark.css original demo"></iframe></td>
+      </tr>
+      <!-- simulate horizontal rule -->
+      <tr><td class="bordered"></td><td class="bordered"></td></tr>
+      <!-- end horizontal rule -->
+      <tr>
+        <td><a href="solarized-light.css">converted solarized-light.css</a></td>
+        <td><a href="original-stylesheets/solarized-light.css">original solarized-light.css</a></td>
+      </tr>
+      <tr>
+        <td><iframe src="demos/solarized-light-converted.html" title="solarized-light.css demo"></iframe></td>
+        <td><iframe src="demos/solarized-light-original.html" title="solarized-light.css original demo"></iframe></td>
+      </tr>
+      <!-- simulate horizontal rule -->
+      <tr><td class="bordered"></td><td class="bordered"></td></tr>
+      <!-- end horizontal rule -->
+      <tr>
+        <td><a href="trac.css">converted trac.css</a></td>
+        <td><a href="original-stylesheets/trac.css">original trac.css</a></td>
+      </tr>
+      <tr>
+        <td><iframe src="demos/trac-converted.html" title="trac.css demo"></iframe></td>
+        <td><iframe src="demos/trac-original.html" title="trac.css original demo"></iframe></td>
+      </tr>
+      <!-- simulate horizontal rule -->
+      <tr><td class="bordered"></td><td class="bordered"></td></tr>
+      <!-- end horizontal rule -->
+      <tr>
+        <td><a href="vim.css">converted vim.css</a></td>
+        <td><a href="original-stylesheets/vim.css">original vim.css</a></td>
+      </tr>
+      <tr>
+        <td><iframe src="demos/vim-converted.html" title="vim.css demo"></iframe></td>
+        <td><iframe src="demos/vim-original.html" title="vim.css original demo"></iframe></td>
+      </tr>
+    </table>
+
+    <p><a href="https://github.com/mpchadwick/pygments-high-contrast-stylesheets">View Project on GitHub</a></p>
+  </body>
 </html>
